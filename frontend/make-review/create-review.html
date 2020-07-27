@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Write Review</title>
+
+  <script defer src="create-review.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <h1>Write A Review</h1>
+  </header>
+
+  <main>
+    <div id="quote">
+      <h3>Quote:</h3>
+    </div>
+    <div>
+      <p>Please rate the quote 1-5:</p>
+      <form id="review-form" method="POST" action="http://localhost:3000/reviews">
+        <input id="1" type="radio" name="rating" value="1" checked>
+        <label for="1">1</label>
+
+        <input id="2" type="radio" name="rating" value="2">
+        <label for="2">2</label>
+
+        <input id="3" type="radio" name="rating" value="3">
+        <label for="3">3</label>
+
+        <input id="4" type="radio" name="rating" value="4">
+        <label for="4">4</label>
+
+        <input id="5" type="radio" name="rating" value="5">
+        <label for="5">5</label>
+        <br>
+
+        <label for="user_review">Please write a review:</label>
+        <br>
+        <textarea name="user_review" id="user_review" cols="30" rows="10"></textarea>
+        <br>
+
+        <input type="submit" value="Submit Review">
+      </form>
+    </div>
+  </main>
+
+</body>
+</html>
