@@ -5,6 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'rest-client'
+
+rest_client = RestClient.get 'https://philosophy-quotes-api.glitch.me/quotes'
+rest_client_array = JSON.parse(rest_client)
+rest_client_array.each do |quote|
+  Quote.create(
+    source: quote["source"],
+    philosophy: quote["philosophy"],
+    quote: quote["quote"]
+  )
+end
 
 michael = User.create(
   username: "michael",
@@ -19,40 +30,24 @@ billy = User.create(
   password: "billy"
 )
 
-quote1 = Quote.create(
-  source: "philosopher 1",
-  philosophy: "philosophy 1",
-  quote: "quote 1"
-)
-quote2 = Quote.create(
-  source: "philosopher 2",
-  philosophy: "philosophy 2",
-  quote: "quote 2"
-)
-quote3 = Quote.create(
-  source: "philosopher 3",
-  philosophy: "philosophy 3",
-  quote: "quote 3"
-)
-
-review1 = Review.create(
-  user_review: "I dont like this quote.",
-  rating: 1,
-  user: michael,
-  quote: quote1
-)
-review2 = Review.create(
-  user_review: "This quote is alright.",
-  rating: 3,
-  user: gerald,
-  quote: quote2
-)
-review3 = Review.create(
-  user_review: "I love this quote",
-  rating: 5,
-  user: billy,
-  quote: quote3
-)
+# review1 = Review.create(
+#   user_review: "I dont like this quote.",
+#   rating: 1,
+#   user: michael,
+#   quote: quote1
+# )
+# review2 = Review.create(
+#   user_review: "This quote is alright.",
+#   rating: 3,
+#   user: gerald,
+#   quote: quote2
+# )
+# review3 = Review.create(
+#   user_review: "I love this quote",
+#   rating: 5,
+#   user: billy,
+#   quote: quote3
+# )
 
 
 
