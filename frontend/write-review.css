@@ -1,3 +1,8 @@
 .img-thumbnail{
   height: 350px;
 }
+
+.navbar li:hover {
+  background-color:lightgrey;
+  border-radius: 30px;
+}
