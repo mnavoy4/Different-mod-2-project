@@ -4,10 +4,10 @@ class ReviewsController < ApplicationController
     if params[:username]
       @reviews = Review.where(user_id: User.find_by(username: params[:username]))
       # byebug
-      render json: @reviews
+      render json: @reviews, include: :quote
     else
       @reviews = Review.all
-      render json: @reviews
+      render json: @reviews, include: :quote
     end
     
     # redirect_to "http://localhost:3001/create-review.html?username=#{params[:username]}"
