@@ -26,7 +26,7 @@ function renderRandomQuote(quotes){
   hiddenQuoteId.value = randomQuote.id;
   assignPictureURL();
   quoteP.innerHTML = `<p>${randomQuote.quote}</p>
-    <img class="m-5 rounded float-right img-thumbnail col-md-4" src=${pictureURL}>
+    <img class="m-5 float-right img-thumbnail col-md-5" src=${pictureURL}>
     <p>Philosophy: <a href=https://en.wikipedia.org/wiki/${randomQuote.philosophy}>${randomQuote.philosophy}</a></p>
     <p>Source: <a href=https://en.wikipedia.org/wiki/${wikiSearchString}>${randomQuote.source}</a></p>`;
   quoteDiv.append(quoteP);
