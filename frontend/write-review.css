@@ -3,6 +3,6 @@
 }
 
 .navbar li:hover {
-  background-color:lightgrey;
+  background-color:#ededed;
   border-radius: 30px;
 }

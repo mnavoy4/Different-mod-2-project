@@ -1,5 +1,4 @@
 class ReviewsController < ApplicationController
-
   def index
     if params[:username]
       @reviews = Review.where(user_id: User.find_by(username: params[:username]))
@@ -9,10 +8,6 @@ class ReviewsController < ApplicationController
       @reviews = Review.all
       render json: @reviews, include: :quote
     end
-    
-    # redirect_to "http://localhost:3001/create-review.html?username=#{params[:username]}"
-    # redirect_to "http://localhost:3001/see-reviews.html?username=#{params[:username]}"
-    # redirect_to "http://localhost:3001/see-reviews.html"
   end
 
   def create

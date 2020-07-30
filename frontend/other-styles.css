@@ -2,6 +2,6 @@ body {
   background-image: url("https://image.freepik.com/free-photo/burlap-sack-background-texture_35652-612.jpg");
 }
 .navbar li:hover {
-  background-color:lightgrey;
+  background-color: #ededed;
   border-radius: 30px;
 }
